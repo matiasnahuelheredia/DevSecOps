@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dbb2f7c-2f2b-4812-a704-d80dd1b872b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sonarcloud.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonarcloud.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matiasheredia/JavaTest/Infrastructure/Services/MessageSenderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matiasheredia/JavaTest/model/Entities/MessageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/matiasheredia/JavaTest/model/UseCases/MessageSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/matiasheredia/JavaTest/controllers/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matiasheredia/JavaTest/controllers/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/matiasheredia/JavaTest/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matiasheredia/JavaTest/model/Entities/Message.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +21,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -49,7 +54,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/router/eclipse-workspace/practicas-conceptos-avanzados",
+    "last_opened_file_path": "/home/router/eclipse-workspace/JavaTest",
     "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -60,6 +65,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.github/workflows" />
       <recent name="$PROJECT_DIR$/.github/push.yml" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.matiasheredia.JavaTest.model.entities" />
     </key>
   </component>
   <component name="RunManager" selected="Shell Script.mvnw">
