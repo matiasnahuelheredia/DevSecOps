@@ -1,9 +1,8 @@
 package com.matiasheredia.JavaTest.controllers;
-
-import com.matiasheredia.JavaTest.model.Entities.ImmutableMessageResponse;
 import com.matiasheredia.JavaTest.model.Entities.Message;
 import com.matiasheredia.JavaTest.model.Entities.ImmutableMessage;
 import com.matiasheredia.JavaTest.model.Entities.MessageResponse;
+import com.matiasheredia.JavaTest.model.Entities.ImmutableMessageResponse;
 import com.matiasheredia.JavaTest.model.UseCases.MessageSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
