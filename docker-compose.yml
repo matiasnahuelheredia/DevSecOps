@@ -26,7 +26,7 @@ services:
                 container_name: Producer
                 image: tomcat:10
                 volumes:
-                        - ./target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+                        - ./producer/target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
                 ports:
                         - "8080:8080"
         consumer:
@@ -35,6 +35,6 @@ services:
                 depends_on:
                         - producer
                 volumes:
-                        - ./target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+                        - ./producer/target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
                 ports:
                         - "8081:8080"
