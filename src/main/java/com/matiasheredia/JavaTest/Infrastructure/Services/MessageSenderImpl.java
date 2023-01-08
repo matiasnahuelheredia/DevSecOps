@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MessageSenderImpl implements MessageSender {
+
+    public MessageSenderImpl(){}
+
     @Override
     public void sendAsyncMessage(Message message) {
 
