@@ -35,6 +35,6 @@ services:
                 depends_on:
                         - producer
                 volumes:
-                        - ./producer/target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+                        - ./consumer/target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
                 ports:
                         - "8081:8080"
