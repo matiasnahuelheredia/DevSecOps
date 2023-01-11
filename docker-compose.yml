@@ -22,10 +22,19 @@ services:
                         KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:29092,PLAINTEXT_HOST://localhost:9092
                         KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
                         KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
-        tomcat:
-                container_name: apacheTomcat
+        producer:
+                container_name: Producer
                 image: tomcat:10
                 volumes:
-                        - ./target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+                        - ./producer/target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
                 ports:
                         - "8080:8080"
+        consumer:
+                container_name: Consumer
+                image: tomcat:10
+                depends_on:
+                        - producer
+                volumes:
+                        - ./consumer/target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+                ports:
+                        - "8081:8080"
