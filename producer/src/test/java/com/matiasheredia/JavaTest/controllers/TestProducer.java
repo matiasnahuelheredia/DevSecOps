@@ -30,7 +30,6 @@ public class TestProducer {
     private static Message regularMessage = ImmutableMessage.builder()
             .message("Hola, tu código de acceso es 1234.")
             .email("xxx@test.com")
-            .actualDate(new Date())
             .build();
     @Before
     public  void setup() {

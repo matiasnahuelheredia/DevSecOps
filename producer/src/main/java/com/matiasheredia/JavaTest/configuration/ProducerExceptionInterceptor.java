@@ -32,6 +32,7 @@ public class ProducerExceptionInterceptor {
         Objects.requireNonNull(exception);
         return new ResponseEntity<>(ImmutableMap.builder()
                 .put("status", exception.getStatus().value())
+                .put("msg", exception.getExceptionClass())
                 .put("error", exception.getStatus().getReasonPhrase())
                 .build(),
                 exception.getStatus());
