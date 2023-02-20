@@ -19,8 +19,7 @@ public class KafkaMessageValidation implements MessageValidation{
 
     private boolean isEmailFormatValid(Message message)
     {
-        final String regexPattern = "^(.+)@(\\S+)$";
-        return Pattern.compile(regexPattern).matcher(message.email()).matches();
+        return message.email().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
     }
     private boolean isEmailLengthTooLarge(Message message)
     {
