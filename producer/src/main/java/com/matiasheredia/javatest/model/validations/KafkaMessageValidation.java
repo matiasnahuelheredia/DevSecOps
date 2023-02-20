@@ -1,8 +1,8 @@
-package com.matiasheredia.JavaTest.model.Validations;
+package com.matiasheredia.javatest.model.validations;
 
-import com.matiasheredia.JavaTest.model.Entities.Message;
-import com.matiasheredia.JavaTest.model.Exceptions.MessageEmailFormatException;
-import com.matiasheredia.JavaTest.model.Exceptions.MessageValueFormatException;
+import com.matiasheredia.javatest.model.entities.Message;
+import com.matiasheredia.javatest.model.exceptions.MessageEmailFormatException;
+import com.matiasheredia.javatest.model.exceptions.MessageValueFormatException;
 import org.springframework.stereotype.Component;
 import java.util.regex.Pattern;
 

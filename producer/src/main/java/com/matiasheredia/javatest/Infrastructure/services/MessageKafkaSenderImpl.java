@@ -1,7 +1,7 @@
-package com.matiasheredia.JavaTest.Infrastructure.Services;
-import com.matiasheredia.JavaTest.model.Entities.Message;
-import com.matiasheredia.JavaTest.model.UseCases.MessageSender;
-import com.matiasheredia.JavaTest.model.Validations.MessageValidation;
+package com.matiasheredia.javatest.Infrastructure.services;
+import com.matiasheredia.javatest.model.entities.Message;
+import com.matiasheredia.javatest.model.usecases.MessageSender;
+import com.matiasheredia.javatest.model.validations.MessageValidation;
 import org.springframework.stereotype.Component;
 
 @Component
