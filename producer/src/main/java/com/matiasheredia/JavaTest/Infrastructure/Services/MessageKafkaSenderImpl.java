@@ -1,7 +1,5 @@
 package com.matiasheredia.JavaTest.Infrastructure.Services;
 import com.matiasheredia.JavaTest.model.Entities.Message;
-import com.matiasheredia.JavaTest.model.Exceptions.MessageEmailFormatException;
-import com.matiasheredia.JavaTest.model.Exceptions.MessageValueFormatException;
 import com.matiasheredia.JavaTest.model.UseCases.MessageSender;
 import com.matiasheredia.JavaTest.model.Validations.MessageValidation;
 import org.springframework.stereotype.Component;

@@ -1,6 +1,4 @@
 package com.matiasheredia.JavaTest.model.Exceptions;
-
-import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import org.springframework.http.HttpStatus;
 
 public enum ExceptionsSupported {
