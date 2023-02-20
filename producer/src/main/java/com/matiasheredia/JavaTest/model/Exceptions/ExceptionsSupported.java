@@ -8,7 +8,7 @@ public enum ExceptionsSupported {
     INVALID_MESSAGE(MessageValueFormatException.class, HttpStatus.UNPROCESSABLE_ENTITY);
     private  Class<? extends Throwable> exceptionClass;
     private HttpStatus status;
-    private String msg;
+
     private ExceptionsSupported(Class<? extends Throwable> exception, HttpStatus status) {
         this.exceptionClass = exception;
         this.status = status;
@@ -16,6 +16,7 @@ public enum ExceptionsSupported {
     public Class<? extends Throwable> getExceptionClass() {
         return this.exceptionClass;
     }
+
     public HttpStatus getStatus() {
         return this.status;
     }

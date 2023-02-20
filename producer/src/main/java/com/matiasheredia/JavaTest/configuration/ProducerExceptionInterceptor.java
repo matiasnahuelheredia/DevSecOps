@@ -17,6 +17,7 @@ import java.util.Optional;
 public class ProducerExceptionInterceptor {
     @ExceptionHandler
     public ResponseEntity<Map<Object, Object>> processSupportedExceptions(Throwable throwable) {
+
         Optional<ResponseEntity<Map<Object, Object>>> supportedException = Arrays.stream(ExceptionsSupported.values())
                 .filter(supportedEx -> hasSameClass(supportedEx, throwable))
                 .map(this::createResponseEntityFromException)
@@ -32,7 +33,6 @@ public class ProducerExceptionInterceptor {
         Objects.requireNonNull(exception);
         return new ResponseEntity<>(ImmutableMap.builder()
                 .put("status", exception.getStatus().value())
-                .put("msg", exception.getExceptionClass())
                 .put("error", exception.getStatus().getReasonPhrase())
                 .build(),
                 exception.getStatus());

@@ -30,13 +30,12 @@ public class TestProducer {
             .email("xxxtest.com")
             .build();
     private static Message badLongMessage = ImmutableMessage.builder()
-            .message("Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.Hola, tu código de acceso es 1234.")
+            .message("OhAdAn6565kGBec7Tsu3lKQNmOdKHMp77gguh1u8WVq2afKGFmhAFW2NIfMaVcqTSFbbZdfeYZDANkneezzC6gaz1DxcdyKvpHlRzYh1QLPiwZkFe0aitzyPdlQvVY7sAtwvHBMAraphphI7rgMmWTUAtLT7UXtMRFOnP25Hf3UVQoiLMJz6joCqd7eTcodj1M4FWTG3jOMbkt7yQaudmtX3R5UB07iCHlS7dVfKgbNuEpbZ1btKH9xyDwGcxQM")
             .email("xxx@test.com")
             .build();
     @Before
     public  void setup() {
         this.producerController = new Producer(messageSender);
-
     }
 
     @Test
