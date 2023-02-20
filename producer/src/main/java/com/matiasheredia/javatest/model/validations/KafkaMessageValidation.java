@@ -8,8 +8,8 @@ import java.util.regex.Pattern;
 
 @Component
 public class KafkaMessageValidation implements MessageValidation{
-    final static int MAX_EMAIL_LENGTH=50;
-    final static int MAX_MSG_CHARACTERS_LENGTH=255;
+    private static final int MAX_EMAIL_LENGTH=50;
+    private static final int MAX_MSG_CHARACTERS_LENGTH=255;
     @Override
     public void validateMessage(Message message) {
         if(!this.isEmailFormatValid(message))       throw MessageEmailFormatException.of(message);
