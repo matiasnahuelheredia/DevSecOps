@@ -1,14 +1,12 @@
-package com.matiasheredia.JavaTest.controllers;
-import com.matiasheredia.JavaTest.model.Entities.Message;
-import com.matiasheredia.JavaTest.model.Entities.ImmutableMessage;
-import com.matiasheredia.JavaTest.model.Entities.MessageResponse;
-import com.matiasheredia.JavaTest.model.Entities.ImmutableMessageResponse;
-import com.matiasheredia.JavaTest.model.UseCases.MessageSender;
+package com.matiasheredia.javatest.controllers;
+import com.matiasheredia.javatest.model.entities.ImmutableMessage;
+import com.matiasheredia.javatest.model.entities.MessageResponse;
+import com.matiasheredia.javatest.model.entities.ImmutableMessageResponse;
+import com.matiasheredia.javatest.model.usecases.MessageSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
 @RestController
 @RequestMapping("/")
 public class Producer {
@@ -33,5 +31,6 @@ public class Producer {
                 .status(HttpStatus.OK.getReasonPhrase())
                 .build();
     }
+
 
 }

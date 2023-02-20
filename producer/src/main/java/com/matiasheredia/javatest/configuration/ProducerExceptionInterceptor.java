@@ -1,7 +1,7 @@
-package com.matiasheredia.JavaTest.configuration;
+package com.matiasheredia.javatest.configuration;
 
 import com.google.common.collect.ImmutableMap;
-import com.matiasheredia.JavaTest.model.Exceptions.ExceptionsSupported;
+import com.matiasheredia.javatest.model.exceptions.ExceptionsSupported;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,6 +17,7 @@ import java.util.Optional;
 public class ProducerExceptionInterceptor {
     @ExceptionHandler
     public ResponseEntity<Map<Object, Object>> processSupportedExceptions(Throwable throwable) {
+
         Optional<ResponseEntity<Map<Object, Object>>> supportedException = Arrays.stream(ExceptionsSupported.values())
                 .filter(supportedEx -> hasSameClass(supportedEx, throwable))
                 .map(this::createResponseEntityFromException)

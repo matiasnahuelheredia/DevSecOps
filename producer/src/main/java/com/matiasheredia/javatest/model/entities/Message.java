@@ -1,4 +1,4 @@
-package com.matiasheredia.JavaTest.model.Entities;
+package com.matiasheredia.javatest.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
