@@ -24,11 +24,11 @@ public class KafkaMessageValidation implements MessageValidation{
     }
     private boolean isEmailLengthTooLarge(Message message)
     {
-        return message.email().length() > this.MAX_EMAIL_LENGTH ? true:false;
+        return message.email().length() > this.MAX_EMAIL_LENGTH;
     }
 
     private boolean isMsgLengthTooLarge(Message message)
     {
-        return message.message().length() > this.MAX_MSG_CHARACTERS_LENGTH ? true:false;
+        return message.message().length() > this.MAX_MSG_CHARACTERS_LENGTH;
     }
 }
