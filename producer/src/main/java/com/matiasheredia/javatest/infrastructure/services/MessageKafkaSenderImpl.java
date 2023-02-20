@@ -1,4 +1,4 @@
-package com.matiasheredia.javatest.Infrastructure.services;
+package com.matiasheredia.javatest.infrastructure.services;
 import com.matiasheredia.javatest.model.entities.Message;
 import com.matiasheredia.javatest.model.usecases.MessageSender;
 import com.matiasheredia.javatest.model.validations.MessageValidation;
