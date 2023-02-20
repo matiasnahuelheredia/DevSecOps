@@ -4,7 +4,6 @@ import com.matiasheredia.javatest.model.entities.Message;
 import com.matiasheredia.javatest.model.exceptions.MessageEmailFormatException;
 import com.matiasheredia.javatest.model.exceptions.MessageValueFormatException;
 import org.springframework.stereotype.Component;
-import java.util.regex.Pattern;
 
 @Component
 public class KafkaMessageValidation implements MessageValidation{
