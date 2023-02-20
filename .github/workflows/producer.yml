@@ -13,5 +13,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
+      - name: Test
+        run: cd producer && mvn --batch-mode test
       - name: Build with Maven
         run: cd producer && mvn --batch-mode --update-snapshots package
