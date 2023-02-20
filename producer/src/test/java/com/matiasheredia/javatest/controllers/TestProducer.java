@@ -1,10 +1,10 @@
-package com.matiasheredia.JavaTest.controllers;
-import com.matiasheredia.JavaTest.model.Entities.ImmutableMessage;
-import com.matiasheredia.JavaTest.model.Entities.Message;
-import com.matiasheredia.JavaTest.model.Entities.MessageResponse;
-import com.matiasheredia.JavaTest.model.Exceptions.MessageEmailFormatException;
-import com.matiasheredia.JavaTest.model.Exceptions.MessageValueFormatException;
-import com.matiasheredia.JavaTest.model.UseCases.MessageSender;
+package com.matiasheredia.javatest.controllers;
+import com.matiasheredia.javatest.model.entities.ImmutableMessage;
+import com.matiasheredia.javatest.model.entities.Message;
+import com.matiasheredia.javatest.model.entities.MessageResponse;
+import com.matiasheredia.javatest.model.exceptions.MessageEmailFormatException;
+import com.matiasheredia.javatest.model.exceptions.MessageValueFormatException;
+import com.matiasheredia.javatest.model.usecases.MessageSender;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

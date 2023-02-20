@@ -1,4 +1,4 @@
-package com.matiasheredia.JavaTest.model.Exceptions;
+package com.matiasheredia.javatest.model.exceptions;
 import org.springframework.http.HttpStatus;
 
 public enum ExceptionsSupported {

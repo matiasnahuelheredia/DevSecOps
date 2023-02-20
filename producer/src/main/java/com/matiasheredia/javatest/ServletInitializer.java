@@ -1,4 +1,4 @@
-package com.matiasheredia.JavaTest;
+package com.matiasheredia.javatest;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

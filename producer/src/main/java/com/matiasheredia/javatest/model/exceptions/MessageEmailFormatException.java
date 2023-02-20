@@ -1,6 +1,6 @@
-package com.matiasheredia.JavaTest.model.Exceptions;
+package com.matiasheredia.javatest.model.exceptions;
 
-import com.matiasheredia.JavaTest.model.Entities.Message;
+import com.matiasheredia.javatest.model.entities.Message;
 
 public class MessageEmailFormatException extends RuntimeException {
     public static MessageEmailFormatException of(Message message) {
