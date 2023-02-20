@@ -1,25 +1,19 @@
 package com.matiasheredia.JavaTest.controllers;
-
 import com.matiasheredia.JavaTest.model.Entities.ImmutableMessage;
 import com.matiasheredia.JavaTest.model.Entities.Message;
 import com.matiasheredia.JavaTest.model.Entities.MessageResponse;
+import com.matiasheredia.JavaTest.model.Exceptions.MessageEmailFormatException;
+import com.matiasheredia.JavaTest.model.Exceptions.MessageValueFormatException;
 import com.matiasheredia.JavaTest.model.UseCases.MessageSender;
-import com.matiasheredia.JavaTest.controllers.Producer;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Date;
-import java.util.concurrent.ExecutorService;
-
+import org.springframework.http.HttpStatus;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
+import static org.mockito.Mockito.doThrow;
 @RunWith(MockitoJUnitRunner.class)
 public class TestProducer {
 
@@ -30,7 +24,14 @@ public class TestProducer {
     private static Message regularMessage = ImmutableMessage.builder()
             .message("Hola, tu código de acceso es 1234.")
             .email("xxx@test.com")
-            .actualDate(new Date())
+            .build();
+    private static Message badMailMessage = ImmutableMessage.builder()
+            .message("Hola, tu código de acceso es 1234.")
+            .email("xxxtest.com")
+            .build();
+    private static Message badLongMessage = ImmutableMessage.builder()
+            .message("OhAdAn6565kGBec7Tsu3lKQNmOdKHMp77gguh1u8WVq2afKGFmhAFW2NIfMaVcqTSFbbZdfeYZDANkneezzC6gaz1DxcdyKvpHlRzYh1QLPiwZkFe0aitzyPdlQvVY7sAtwvHBMAraphphI7rgMmWTUAtLT7UXtMRFOnP25Hf3UVQoiLMJz6joCqd7eTcodj1M4FWTG3jOMbkt7yQaudmtX3R5UB07iCHlS7dVfKgbNuEpbZ1btKH9xyDwGcxQM")
+            .email("xxx@test.com")
             .build();
     @Before
     public  void setup() {
@@ -41,7 +42,23 @@ public class TestProducer {
     public void testThatMessageCanBeSend() {
         MessageResponse producerResponse = producerController.sendMessage((ImmutableMessage)regularMessage);
         assertNotNull(producerResponse);
-        assertEquals("OK", producerResponse.status());
+        assertEquals(HttpStatus.OK.getReasonPhrase(), producerResponse.status());
+    }
+
+    @Test(expected = MessageEmailFormatException.class)
+    public void testThatBadFormatEmailCannotBeSend() {
+        doThrow(MessageEmailFormatException.of(badMailMessage))
+                .when(messageSender)
+                .sendAsyncMessage((ImmutableMessage)badMailMessage);
+        producerController.sendMessage((ImmutableMessage)badMailMessage);
+    }
+
+    @Test(expected = MessageValueFormatException.class)
+    public void testThatLongMessageCannotBeSend() {
+        doThrow(MessageValueFormatException.of(badLongMessage))
+                .when(messageSender)
+                .sendAsyncMessage((ImmutableMessage)badLongMessage);
+        producerController.sendMessage((ImmutableMessage)badLongMessage);
     }
 
 
