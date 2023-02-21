@@ -4,14 +4,12 @@ import com.matiasheredia.javatest.model.usecases.MessageSender;
 import com.matiasheredia.javatest.model.validations.MessageValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaOperations;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MessageKafkaSenderImpl implements MessageSender {
 
     private MessageValidation validation;
-    private static String topic="topico";
     @Autowired
     private KafkaOperations<String,String> template;
     public MessageKafkaSenderImpl(MessageValidation validation,KafkaOperations<String,String> template){
@@ -22,6 +20,7 @@ public class MessageKafkaSenderImpl implements MessageSender {
     @Override
     public void sendAsyncMessage(Message message) {
         this.validation.validateMessage(message);
-        this.template.send(this.topic,message.message());
+        final String topic = "topico";
+        this.template.send(topic,message.message());
     }
 }
