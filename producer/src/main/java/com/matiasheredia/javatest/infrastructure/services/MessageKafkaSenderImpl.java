@@ -2,19 +2,26 @@ package com.matiasheredia.javatest.infrastructure.services;
 import com.matiasheredia.javatest.model.entities.Message;
 import com.matiasheredia.javatest.model.usecases.MessageSender;
 import com.matiasheredia.javatest.model.validations.MessageValidation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaOperations;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MessageKafkaSenderImpl implements MessageSender {
 
     private MessageValidation validation;
-    public MessageKafkaSenderImpl(MessageValidation validation){
+    private static String topic="topico";
+    @Autowired
+    private KafkaOperations<String,String> template;
+    public MessageKafkaSenderImpl(MessageValidation validation,KafkaOperations<String,String> template){
         this.validation = validation;
+        this.template = template;
     }
 
     @Override
     public void sendAsyncMessage(Message message) {
         this.validation.validateMessage(message);
-        //code Implementation code here
+        this.template.send(this.topic,message.message());
     }
 }
