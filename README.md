@@ -1,4 +1,4 @@
-# Prueba JAVA
+# DEV-SEC-OPS (Develop-Security-Operations)
 Test of java using:
 
 ·Clean Architecture
@@ -14,6 +14,16 @@ Test of java using:
 ·Junit
 
 ·DevSecOps Concepts.
+
+·SAST.(Static Application Security Testing)
+
+·Event Driven Design.
+
+·BDD behavior driven development:
+
+·Apache Kafka.
+
+
 
 ## Run this program:
 For run this program you need install docker and run in your machine:
