@@ -8,6 +8,8 @@ services:
                 environment:
                         ZOOKEEPER_CLIENT_PORT: 2181
                         ZOOKEEPER_TICK_TIME: 2000
+                networks:
+                        - my_network
         kafka:
                 image: confluentinc/cp-kafka:6.1.1
                 hostname: kafka
@@ -19,9 +21,11 @@ services:
                 environment:
                         KAFKA_BROKER_ID: 1
                         KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
-                        KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:29092,PLAINTEXT_HOST://localhost:9092
+                        KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:29092,PLAINTEXT_HOST://kafka:9092
                         KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
                         KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+                networks:
+                        - my_network
         producer:
                 container_name: Producer
                 image: tomcat:10
@@ -29,12 +33,16 @@ services:
                         - ./producer/target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
                 ports:
                         - "8081:8080"
+                networks:
+                        - my_network
         consumer:
                 container_name: Consumer
                 image: tomcat:10
-                depends_on:
-                        - producer
                 volumes:
                         - ./consumer/target/JavaTest-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
                 ports:
                         - "8082:8080"
+                networks:
+                        - my_network
+networks:
+      my_network:

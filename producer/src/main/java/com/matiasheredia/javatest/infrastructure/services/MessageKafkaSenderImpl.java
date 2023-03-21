@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class MessageKafkaSenderImpl implements MessageSender {
 
     private MessageValidation validation;
-    @Autowired
+
     private KafkaOperations<String,String> template;
     public MessageKafkaSenderImpl(MessageValidation validation,KafkaOperations<String,String> template){
         this.validation = validation;
